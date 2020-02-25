@@ -1,0 +1,59 @@
+[Ch0. 개요]
+
+목표
+	- 머신러닝에 대한 기본적인 이해
+	- Linear regression, Logistic regression
+	- Deep Learning에 대한 이해
+	- Tensorflow and Python을 이용한 문제해결
+
+참고자료
+	- Andrew Ng's ML class
+		https://class.coursera.org/ml-003/lecture
+		https://www.holehouse.org/mlclass/ (note)
+
+
+
+
+[Ch1. 머신러닝의 기본적 이해]
+
+기존 - explicit programming
+1959 Arthur Samuel - 머신러닝 제시
+
+학습하는 방식에 따라
+	- Supervised learning
+		label이 이미 달려있는 자료를 이용하여 학습
+
+	- Unsupervised learning
+		lavel 없는 자료에서 직접 학습
+
+Training data set
+	X	-	Y	
+	feature		label	==ML=>	
+
+Supervised learning의 타입
+	- Regression
+		ex) predict exam score(0~100) based on time spent
+	- Binary classification
+		ex) pass/non-pass based on time spent
+	- Multi-label classification
+		ex) Letter grade(A, B, C, F) based on time spent
+
+
+TensorFlow
+	data flow graphs를 사용하여 numerical한 계산을 한다 (with Python)
+
+Data Flow Graph
+	Node = operation (+, x, ..)
+	Edge = data arrays (tensors)
+
+https://gihub.com/hunkim/DeepLearningZeroToAll/
+
+Tensor의 Rank, Shapes, and Types
+	- Rank
+		몇 차원 배열?
+	- Shapes
+		각각의 element의 개수
+		[[1, 2, 3], [4, 5, 6]]  =>  (2, 3)
+	- Types
+		tf.float32
+		tf.int32
