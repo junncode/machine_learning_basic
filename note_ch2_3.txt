@@ -9,10 +9,38 @@ Cost function (Loss function)
 		보통: ( H(x) - y )^2
 			H(x) = Wx + b 를 대입하여 cost(W, b)를 최소화하는 모델 찾는 것
 
+Gradient descent algorithm
+	- Minimize cost function
+	- is used many minimization problems
+	- given cost func like cost(W, b), cost(w1, w2, ...)
 
 
+	=> 경사도 사용! (미분)
+
+	- Formal definition
+		W := W - a * 1/m * [m~i=1]{(W * xi - yi) * xi}
+
+Convex function
+	- 다른 시작점에서 gradient descent algorithm을 사용하여도 같은 지점 도달
+	- !! cost func 설계 시, convex function의 모양인지 꼭 확인 !!
 
 
+[사용되는 함수 정리]
 
+	tf.reduce_mean(x) : x의 평균 리턴
+	
+	tf.train.GradientDescentOptimizer(learning_rate=0.01)
+		: learning_rate를 0.01로 Gradient descent algorithm 실행
 
+	optimizer.minimize(cost) : optimizer을 이용해 cost를 최소화 시킨다
 
+	sess = tf.Session()
+	sess.run(tf.global_variables_initializer())
+
+	a, b, c = sess.run([a, b, c], feed_dict={X: [~~], Y: [~~]})
+		: X, Y에 값을 넣으며 sess을 진행시켰을 때 전역변수 a,b,c에 값 저장
+
+	plt.plot(x, y) : x축, y축으로 그래프 생성
+	plt.show()
+
+	
