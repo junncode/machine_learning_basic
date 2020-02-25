@@ -28,7 +28,7 @@ def train():
     ret = optimizer.minimize(cost)
     return ret
 '''
-optimizer = tf.train.GradientDescentOptimizer(learing_rate=0.01)
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01)
 train = optimizer.minimize(cost)
 
 sess = tf.Session()

@@ -1,0 +1,18 @@
+[Ch2. Linear Regression의 개념]
+
+Linear Regression -> (Linear) Hypothesis
+
+H(x) = Wx + b
+
+Cost function (Loss function)
+	- how fit the line to our (training) data
+		보통: ( H(x) - y )^2
+			H(x) = Wx + b 를 대입하여 cost(W, b)를 최소화하는 모델 찾는 것
+
+
+
+
+
+
+
+
