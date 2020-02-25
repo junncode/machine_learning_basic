@@ -10,7 +10,7 @@ Y = tf.placeholder(tf.float32, shape=[None])
 hypothesis = X * W + b
 cost = tf.reduce_mean(tf.square(hypothesis - Y))
 
-optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01)
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.05)
 train = optimizer.minimize(cost)
 
 sess = tf.Session()
