@@ -1,0 +1,61 @@
+[Ch4. 다중 feature의 Linear Regression]
+
+H(x1, x2, x3) = w1*x1 + w2*x2 + w3*x3 + b
+...
+	=> feature 수가 늘어날수록 식이 힘들어진다 => Matrix 사용
+
+Matrix multiplication
+	H(x1, x2, x3) = w1*x1 + w2*x2 + w3*x3
+			
+			=>
+
+			 w1
+	(x1  x2  x3)	(w2) = (x1w1  x2w2  x3w3)
+			 w3
+	
+		=>	H(X) = XW
+				* 처음 식과 다르게 보통 X를 앞에 쓴다
+
+Many x instances
+	 x11  x12  x13
+	 x21  x22  x23	   w1
+	(x31  x32  x33) * (w2) => 결과 쉽게 구할 수 있다
+	 x41  x42  x43	   w3
+	 x51  x52  x53
+
+		[5, 3]  *  [3, 1] = [5, 1]
+		  X	*     W	  = H(X)
+
+	***
+	[None, (입력 개수)] * [(입력 개수), (출력 개수)] = [None, (출력 개수)]
+
+
+파일에서 data 읽어오기
+	import numpy as np
+	np.loadtxt('[파일 이름]', delimiter='[구분자]', dtype=[data 타입])
+
+	파일이 너무 클 때?
+		=> Queue Runners
+
+Queue Runners
+	File -> File Queue -> Reader -> Decoder -> Example Queue
+
+	(1) filename_queue = tf.train.string_input_producer([파일들, ...], shuffle=False, name='filename_queue')
+	(2) reader = tf.TextLineReader()
+	    key, value = reader.read(filename_queue)
+	(3) record_defaults = [[0.], [0.], [0.], [0.]]
+	    xy = tf.decode_csv(value, record_defaults=record_defaults)
+	(4) train_x_batch, train_y_batch = tf.train.batch([xy[0:-1], xy[-1:]], batch_size=10)
+	(5) coord = tf.train.Coordinator()
+	    threads = tf.train.start_queue_runners(sess=sess, coord=coord)
+
+	    ~~~
+
+	    coord.request_stop()
+	    coord.join(threads)
+
+
+
+
+
+
