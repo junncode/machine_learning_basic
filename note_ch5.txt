@@ -1,0 +1,38 @@
+[Ch5. Logistic (Binary) Classification]
+
+>> 복습
+Regression
+	- Hypothesis
+		H(X) = XW
+	- Cost
+		cost(W) = [H(x) - y]의 reduce_mean
+	- Gradient decent
+		W := W - [learning rate][cost(W)의 미분]
+<<
+
+
+Binary Classification
+	ex) Spam Detection: Spam or Ham
+	    Facebook feed: show or hide
+	    Credit Card Fraudulent Transaction detection: legitimate or fraud
+		=> 0, 1 encoding
+	    Radiology, Finance...
+
+	딥러닝 예시 영상)
+		https://www.youtube.com/watch?v=BmkA1ZsG2P4
+
+	- Linear Regression을 사용하지 않는 이유
+		data의 범위가 늘어나면
+		H(x) = Wx + b라는 Linear Regression의 그래프로는 정확히 분류 어렵다
+
+	- G(z)라는 것을 이용하자!
+		g(z) = 1 / (1 + e^-z)
+		=> Logistic function (= Sigmoid function)
+	
+Logistic Hypothesis
+	H(X) = 1 / (1 + e^(- W^T * X))
+
+Cost function
+	
+
+
