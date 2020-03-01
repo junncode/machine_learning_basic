@@ -1,0 +1,38 @@
+[Ch6. Multinomial Logistic Classification]
+
+Multinomial Classification
+	A,B,C가 있을 경우
+		A or not, B or not, C or not - 3개의 Binary Classification으로 가능
+		각각의 sigmoid 함수에 적용
+
+		[Wa1 Wa2 Wa3][X1]	[Wa1X1 + Wa2X2 + Wa3X3]		[Ya]
+		[Wb1 Wb2 Wb3][X2] =	[Wb1X1 + Wb2X2 + Wb3X3] =	[Yb]
+		[Wc1 Wc2 Wc3][X3]	[Wc1X1 + Wc2X2 + Wc3X3]		[Yc]
+
+Softmax
+	
+	  2.0		0.7		1.0	a o
+	Y 1.0	S(yi)	0.2	-max->	0.0	b x
+	  0.1		0.1		0.0	c x
+
+	* S(yi) = e^yi / (e^y1 + e^y2 + ...)
+
+Cost function
+	S(Y)	----	D(S,L)  --->	L
+
+Cross-entropy cost func
+	[총합](Li * -log(yi))
+
+	-log(0) = 무한대, -log(1) = 0
+
+
+Logistic cost  VS  cross entropy
+	결국 같은 것이다
+
+	L = 1/N [총합i]D(S(WXi + b), Li)
+
+		* L = loss, i = training set 개수
+
+
+Gradient descent 알고리즘 사용
+	

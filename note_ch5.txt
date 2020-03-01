@@ -33,6 +33,16 @@ Logistic Hypothesis
 	H(X) = 1 / (1 + e^(- W^T * X))
 
 Cost function
-	
+	울퉁불퉁한 U 모양 => Linear에서 사용한 cost 함수를 쓰면 시작점에 따라 결과가 바뀜
+
+	c(H(x), y)	{  -log(H(x))	 (y=1)
+			{  -log(1-H(x))	 (y=0)
+
+		=> C(H(x), y) = -y*log(H(x)) - (1-y)log(1-H(x))
+
+Minimize cost
+	Linear 때와 같이 미분
+	=> tf.train.GradientDescentOptimizer() 사용
+
 
 
