@@ -1,0 +1,38 @@
+[Ch12. NN의 꽃 RNN]
+
+Sequence data
+	NN/CNN은 Sequence data를 처리할 수 없다
+	=> 이전의 학습데이터가 다음 학습에 영향을 미치게 해야한다
+
+
+Recurrent Neural Network
+
+	h_t = f_w(h_t-1, x_t)
+	 
+	* h_t = new state     f_w = some function with parameters W
+	  h_t-1 = old state   x_t = input vector at some time step
+	
+	fw는 모든 RNN에서 같다
+
+Vanilla RNN
+	h_t = tanh(W_hh h_t-1 + W_xh x_t)
+	y_t = W_hy h_t
+
+
+활용되는 곳
+	Language Modeling
+	Speech Recognition
+	Machine Translaction
+	Conversation Modeling / Question Answering
+	Image/Video Captioning
+	Image/Music/Dance Generation
+
+
+Multi-Layer RNN
+
+Long Short Term Memory (LSTM)
+
+
+
+
+

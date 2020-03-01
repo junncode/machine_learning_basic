@@ -1,0 +1,68 @@
+[Ch11. Convolutional Neural Network]
+
+Split & merge <- Convolutional Neural Network의 기본 idea
+
+기본 형태
+  Conv - ReLU - Conv - ReLU - Pool - Conv - ReLU - Conv - ReLU - PooL ... Fully Connected
+
+
+[32*32*3] -> [5*5*3]
+		ㄴ> Wx + b / ReLu(Wx + b) 등으로 하나의 값으로 만든다
+	stride = 움직이는 칸의 크기
+	
+	[N x N]에서 [F x F]를 추출할 때 stride만큼 움직일 때 결과가 몇 개 나오는가
+		= {(N-F) / stride} + 1
+
+Padding
+	보통 테두리에 0으로 padding을 해준다
+		ex) 7 x 7 -> 9 x 9
+			이럴 때, [9x9] in -> [7x7] out 되므로 [7x7]=>[7x7]처럼 됨
+
+ex)
+[32*32*5] --5x5x3, 6--> [28*28*6] --5x5x6, 10--> [24*24*10] --> ....
+
+
+Pooling Layer (= Sampling)
+	conv layer ---filter 하나씩---> resize(=sampling)
+
+Max Pooling
+	1 1 2 4		
+	5 6 7 8	   ->	6 8
+	3 2 1 0		3 4
+	1 2 3 4		
+
+
+Fully Connected Layer
+
+
+참고) http://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html
+
+
+
+@@ Case Study
+
+LeNet-5  - LeCun(1998)
+
+AlexNet  - Krizhevsky (2012)
+	8 layers
+	Normalazation layer 사용 (최근 잘 사용 x)
+	ReLU 첫 사용
+	7 CNN을 ensemble: 18.2% -> 15.4%
+
+GoogLeNet
+	Inception module (6.7% top 5 error)
+
+ResNet (He et al, 2015)
+	152 Layers used
+	-> fast forward
+		H(x) = F(x) + x
+
+CNN for Sentence Classification (Yoon Kim, 2014)
+
+DeepMind's AlphaGo
+
+
+
+
+
+
