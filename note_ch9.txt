@@ -1,0 +1,67 @@
+[Ch9. Neural Network로 XOR 문제 풀기]
+
+Neural Net
+
+	x1	[5]		
+	x2	[5] b=-8	y1	
+				   [-11]	=> XOR 문제 풀린다
+	x1	[-7]		y2 [-11] b=6
+	x2	[-7] b=3	
+
+		=> Forward propagation
+
+	
+	W1[5, -7]		W2[-11]
+	  [5, -7] B1[-8,3]	  [-11]
+	
+NN
+	K(X) = Sigmoid(XW1 + b1)
+	예측Y = H(X) = Sigmoid(K(X)W2 + b2)
+
+	K = tf.sigmoid(tf.matmul(X, W1) + b1)
+	hypothesis = tf.sigmoid(tf.matmul(tf.matmul(K, W2) + b2)
+
+	
+'''
+미분 개념
+
+Basic derivative
+	d/dx f(x) = 순간 변화율
+
+Partial derivative
+	f(g(x)) = [f를 g로 미분] x [g를 x로 미분]
+'''
+
+
+Backpropagation (chain rule)
+	f = wx + b, g = wx, f = g + b
+
+	w  ---
+	x  ---	*  ->  g
+			+  ->  f
+	b	------
+
+
+	(1) forward (w = -2, x = 5, b = 3)
+		g = -10, f = -7
+
+	  * 미리 미분 해두기
+	    [g를 w로 미분] = x, [g를 x로 미분] = w
+	    [f를 g로 미분] = 1, [f를 b로 미분] = 1
+
+	(2) backward
+		[f를 w로 미분] = [f를 g로 미분] * [g를 w로 미분] = 1 * x = 5
+		[f를 x로 미분] = [f를 g로 미분] * [g를 x로 미분] = 1 * w = -2
+
+	==>> 이런식으로 복잡한 layer들도 [local 미분] * [그전 미분] 으로 영향치를 구할 수 있다
+
+	in TensorFlow
+		TensorBoard
+
+
+
+
+
+
+
+
