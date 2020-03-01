@@ -1,0 +1,37 @@
+[Ch8. Neural Network 시작]
+
+역사
+	AND / OR -> linearly separable o
+	   XOR	 -> linearly separable x
+	
+	(첫 침체기) Perceptrons - Marvin Minsky
+		XOR은 하나의 linear로 불가능하다 증명
+		
+	Backpropagation - Paul Werbos (1974, 1982)
+			  Hinton (1986)
+
+	Convolutional Neural Networks - LeCun
+	
+	(두번째 침체기)Big problem
+		여러 layer을 사용하면 backpropagation 의 효과가 없었다
+
+	CIFAR
+		가능성 없던 AI에 투자한 캐나다 단체
+	Hinton and Bengjo
+		초기값, 신경망을 잘 구축한다면 좋은 결과를 낼 수 있다
+		==>> Deep Learning 이라 재명명
+
+	IMAGENET Challenge (2010)
+		26.2% -> 3.%(2015)
+
+	Youtube 자막
+	Facebook 피드 추천
+	Google 검색 엔진
+	아마존 서비스
+	
+
+
+
+
+
+
